@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кедровый пар — Место, где отдыхает душа</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --wood-beige: #E6CBA8;
+            --forest-green: #355E3B;
+            --light-beige: #F5E6D8;
+            --dark-wood: #A67C52;
+            --white: #FFFFFF;
+            --cream: #FDF8F0;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: rgba(230, 203, 168, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(53, 94, 59, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--forest-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo i {
+            color: var(--dark-wood);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--forest-green);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--forest-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn,
+        .nav-menu a.cta-btn {
+            background: var(--forest-green);
+            color: white !important;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(53, 94, 59, 0.3);
+        }
+
+        .nav-menu a.cta-btn::after {
+            display: none;
+        }
+
+        .cta-btn:hover {
+            background: #2a4b2e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(53, 94, 59, 0.4);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--forest-green);
+            cursor: pointer;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            height: 100vh;
+            background-image: url('https://github.com/davadrivo/MIT-studioTEST/blob/main/Gemini_Generated_Image_pzzkazpzzkazpzzk%20(1).png?raw=true');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(53, 94, 59, 0.5) 0%, rgba(166, 124, 82, 0.4) 100%);
+            z-index: 1;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23A67C52" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23A67C52" opacity="0.1"/><circle cx="50" cy="50" r="0.5" fill="%23355E3B" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.2;
+            animation: float 20s infinite ease-in-out;
+            z-index: 2;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            padding: 2rem;
+            z-index: 10;
+            position: relative;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-cta {
+            background: var(--forest-green);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(53, 94, 59, 0.4);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(53, 94, 59, 0.5);
+        }
+
+        /* Steam effect */
+        .steam {
+            position: absolute;
+            bottom: -100px;
+            width: 100%;
+            height: 200px;
+            background: radial-gradient(ellipse at center, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: steam-float 8s infinite ease-in-out;
+        }
+
+        @keyframes steam-float {
+            0%, 100% { 
+                transform: translateY(0) scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: translateY(-100px) scale(1.2);
+                opacity: 0.6;
+            }
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about {
+            padding: 6rem 2rem;
+            background: var(--white);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-header::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--wood-beige);
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            animation: fadeIn 1s ease;
+            max-height: 420px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Placeholder for image */
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--wood-beige), var(--light-beige));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--dark-wood);
+        }
+
+        /* ========== SERVICES SECTION ========== */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(53, 94, 59, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--forest-green);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* ========== INTERIOR GALLERY ========== */
+        .interior {
+            padding: 6rem 2rem;
+            background: var(--white);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            height: 250px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(53, 94, 59, 0.2);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(53, 94, 59, 0.3) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--wood-beige), var(--light-beige));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .gallery-description {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* ========== ADVANTAGES SECTION ========== */
+        .advantages {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .advantages-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(53, 94, 59, 0.15);
+        }
+
+        .advantage-icon {
+            font-size: 3rem;
+            color: var(--forest-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .advantage-item h3 {
+            font-size: 1.3rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .advantage-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ========== REVIEWS SECTION ========== */
+        .reviews {
+            padding: 6rem 2rem;
+            background: var(--white);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(53, 94, 59, 0.15);
+        }
+
+        .review-stars {
+            color: #FFB800;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            color: #555;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--wood-beige), var(--dark-wood));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--forest-green);
+        }
+
+        /* ========== PROMOTIONS SECTION ========== */
+        .promotions {
+            padding: 6rem 2rem;
+            background: var(--cream);
+        }
+
+        .promotions-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .promo-card {
+            background: linear-gradient(135deg, var(--forest-green), #2a4b2e);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(53, 94, 59, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-card::before {
+            content: '✨';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(53, 94, 59, 0.4);
+        }
+
+        .promo-badge {
+            display: inline-block;
+            background: var(--wood-beige);
+            color: var(--forest-green);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .promo-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .promo-card p {
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        /* ========== CONTACTS & BOOKING SECTION ========== */
+        .booking {
+            padding: 6rem 2rem;
+            background: var(--white);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--forest-green);
+            width: 40px;
+        }
+
+        .contact-text {
+            color: #555;
+        }
+
+        .contact-text strong {
+            color: var(--forest-green);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--wood-beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--forest-green);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: var(--forest-green);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            height: 300px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--wood-beige), var(--light-beige));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-wood);
+            font-size: 1.1rem;
+        }
+
+        .booking-form {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--forest-green);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--wood-beige);
+            border-radius: 10px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--forest-green);
+            box-shadow: 0 0 0 3px rgba(53, 94, 59, 0.1);
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--forest-green);
+            color: white;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(53, 94, 59, 0.3);
+        }
+
+        .form-submit:hover {
+            background: #2a4b2e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(53, 94, 59, 0.4);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--forest-green);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .footer-menu {
+            list-style: none;
+        }
+
+        .footer-menu li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-menu a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        .footer-menu a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .advantages-grid,
+            .reviews-grid,
+            .promotions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                padding: 0 1rem;
+            }
+
+            .cta-btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <i class="fas fa-tree"></i>
+                <span>Кедровый пар</span>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#interior">Интерьер</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#promotions">Цены</a></li>
+                <li><a href="#booking">Контакты</a></li>
+                <li><a href="#promotions">Акции</a></li>
+                <li><a href="#booking" class="cta-btn">Забронировать</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Место, где отдыхает душа</h1>
+            <p>Современная баня с ароматом кедра и теплом живого пара</p>
+            <a href="#booking" class="hero-cta">Забронировать сеанс</a>
+        </div>
+        <div class="steam"></div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section class="about">
+        <div class="section-header">
+            <h2>О нашей бане</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Добро пожаловать в баню «Кедровый пар» — место, где каждая деталь создана для вашего восстановления и отдыха. Мы создали уютную атмосферу, наполненную ароматом натурального кедра и теплом живого пара.</p>
+                <p>Здесь вы сможете отвлечься от суеты повседневной жизни, восстановить силы после напряженной недели и подарить своему телу заслуженный отдых. Чистота, комфорт и искренняя забота о каждом госте — наши главные принципы.</p>
+                <p>Каждый элемент интерьера продуман до мелочей: от ароматного кедра и мягкого освещения до удобной комнаты отдыха. Приходите к нам и убедитесь, что настоящий отдых начинается с первого вдоха горячего пара.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://github.com/davadrivo/MIT-studioTEST/blob/main/1f295449-5882-40b9-ab71-0ae44be9fa63.png?raw=true" alt="Интерьер бани Кедровый пар">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Что вас ждёт</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tree"></i></div>
+                <h3>Кедровая парная</h3>
+                <p>Насладитесь ароматом натурального кедра и мягким целебным паром в уютной парной</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-shower"></i></div>
+                <h3>Контрастный душ</h3>
+                <p>Охладитесь после парной в прохладной воде — заряд бодрости и энергетической свежести</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-couch"></i></div>
+                <h3>Комната отдыха</h3>
+                <p>Комфортная зона для расслабления с мягкими диванами и приглушенным светом</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-mug-hot"></i></div>
+                <h3>Чайная зона</h3>
+                <p>Попробуйте ароматные травяные чаи и уютно проведите время в компании друзей</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Веник массаж</h3>
+                <p>Оздоровительный массаж банным веником для улучшения кровообращения и снятия стресса</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-feather"></i></div>
+                <h3>Ароматерапия</h3>
+                <p>Забота о вашем здоровье с помощью натуральных эфирных масел и травяных настоев</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INTERIOR GALLERY ========== -->
+    <section class="interior" id="interior">
+        <div class="section-header">
+            <h2>Тепло, свет и дерево — всё, что нужно для отдыха</h2>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://github.com/davadrivo/MIT-studioTEST/blob/main/c34fc785-97f1-4089-85aa-aa09b60b801d.png?raw=true" alt="Интерьер бани">
+            </div>
+            <div class="gallery-item">
+                <img src="https://github.com/davadrivo/MIT-studioTEST/blob/main/844dca7c-f4db-42e6-ac64-7950a50f5b4d.png?raw=true" alt="Интерьер бани">
+            </div>
+            <div class="gallery-item">
+                <img src="https://github.com/davadrivo/MIT-studioTEST/blob/main/eb4db755-eaa4-4058-904a-370526f6ab51.png?raw=true" alt="Интерьер бани">
+            </div>
+            <div class="gallery-item">
+                <img src="https://github.com/davadrivo/MIT-studioTEST/blob/main/Gemini_Generated_Image_pzzkazpzzkazpzzk%20(1).png?raw=true" alt="Интерьер бани">
+            </div>
+            <div class="gallery-item">
+                <img src="https://github.com/davadrivo/MIT-studioTEST/blob/main/3505cf1a-6311-4090-8da2-796522eb76b6.png?raw=true" alt="Интерьер бани">
+            </div>
+            <div class="gallery-item">
+                <img src="https://github.com/davadrivo/MIT-studioTEST/blob/main/Gemini_Generated_Image_lbudwklbudwklbud.png?raw=true" alt="Интерьер бани">
+            </div>
+        </div>
+        <p class="gallery-description">Создали атмосферу уюта и свежести с элементами натурального кедра.</p>
+    </section>
+
+    <!-- ========== ADVANTAGES SECTION ========== -->
+    <section class="advantages">
+        <div class="section-header">
+            <h2>Почему гости возвращаются снова</h2>
+        </div>
+        <div class="advantages-grid">
+            <div class="advantage-item">
+                <div class="advantage-icon"><i class="fas fa-heart"></i></div>
+                <h3>Уют и чистота</h3>
+                <p>Строгие стандарты чистоты и уюта в каждом уголке нашего пространства</p>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Натуральные материалы</h3>
+                <p>Только природные материалы: кедр, камень и натуральные ткани для вашего здоровья</p>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon"><i class="fas fa-hands-helping"></i></div>
+                <h3>Уважение и комфорт</h3>
+                <p>Персональный подход и внимание к каждому гостю создают неповторимую атмосферу</p>
+            </div>
+            <div class="advantage-item">
+                <div class="advantage-icon"><i class="fas fa-tag"></i></div>
+                <h3>Приятные цены</h3>
+                <p>Доступные тарифы без компромиссов в качестве сервиса и обслуживания</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== REVIEWS SECTION ========== -->
+    <section class="reviews" id="reviews">
+        <div class="section-header">
+            <h2>Отзывы гостей</h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Невероятное место! Атмосфера настолько уютная, что не хотелось уходить. Особенно впечатлил аромат кедра в парной — будто в сказочном лесу. Обязательно вернемся!"</p>
+                <div class="review-author">
+                    <div class="author-avatar">МК</div>
+                    <div class="author-name">Мария К.</div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Идеальное место для отдыха после работы. Всё продумано до мелочей — от температурного режима до чайной церемонии. Отличный сервис и прекрасная энергетика!"</p>
+                <div class="review-author">
+                    <div class="author-avatar">ДС</div>
+                    <div class="author-name">Дмитрий С.</div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Пришел с усталостью, ушел с энергией и бодростью. Массаж веником просто божественный! Спасибо за такой замечательный отдых в стенах бани «Кедровый пар»."</p>
+                <div class="review-author">
+                    <div class="author-avatar">АН</div>
+                    <div class="author-name">Анна Н.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROMOTIONS SECTION ========== -->
+    <section class="promotions" id="promotions">
+        <div class="section-header">
+            <h2>Специальные предложения</h2>
+        </div>
+        <div class="promotions-grid">
+            <div class="promo-card">
+                <div class="promo-badge">-10%</div>
+                <h3>Скидка в будни</h3>
+                <p>Посещение бани со скидкой 10% с понедельника по четверг. Идеально для спокойного отдыха без суеты!</p>
+            </div>
+            <div class="promo-card">
+                <div class="promo-badge">Подарок</div>
+                <h3>Чайный сет бесплатно</h3>
+                <p>При бронировании бани от 2 часов — получайте наш фирменный чайный сет с травами в подарок!</p>
+            </div>
+            <div class="promo-card">
+                <div class="promo-badge">Бонус</div>
+                <h3>Приведи друга</h3>
+                <p>Приводите друга с собой и получайте дополнительное время в парной для вашей компании абсолютно бесплатно!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACTS & BOOKING SECTION ========== -->
+    <section class="booking" id="booking">
+        <div class="section-header">
+            <h2>Забронировать баню</h2>
+        </div>
+        <div class="booking-container">
+            <div class="contact-info">
+                <h3 style="color: var(--forest-green); margin-bottom: 2rem; font-size: 1.5rem;">Контакты</h3>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <strong>Адрес</strong>
+                        <div>Новая Согра, 2</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-text">
+                        <strong>Телефон</strong>
+                        <div>+7 (495) 123-45-67</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                    <div class="contact-text">
+                        <strong>Часы работы</strong>
+                        <div>Ежедневно с 10:00 до 23:00</div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps?q=Новая+Согра+2&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="booking-form" style="margin-top: 2rem;">
+                    <form onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Дата</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Время</label>
+                            <input type="time" id="time" name="time" required>
+                        </div>
+                        <button type="submit" class="form-submit">Забронировать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">
+                    <i class="fas fa-tree"></i> Кедровый пар
+                </div>
+                <p class="footer-text">Место, где отдыхает душа. Современная баня с ароматом кедра и теплом живого пара.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1rem;">Навигация</h4>
+                <ul class="footer-menu">
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#interior">Интерьер</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
+                    <li><a href="#promotions">Акции</a></li>
+                    <li><a href="#booking">Контакты</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1rem;">Контакты</h4>
+                <ul class="footer-menu">
+                    <li><i class="fas fa-phone"></i> +7 (495) 123-45-67</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Новая Согра, 2</li>
+                    <li><i class="fas fa-clock"></i> 10:00 - 23:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Кедровый пар. Политика конфиденциальности</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav-menu');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 25px rgba(53, 94, 59, 0.2)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(53, 94, 59, 0.1)';
+            }
+        });
+
+        // Form submission
+        document.querySelector('.booking-form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо за бронирование! Мы свяжемся с вами в ближайшее время.');
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
+
